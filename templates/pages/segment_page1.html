@@ -1,0 +1,90 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .signal-tower {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-tower {
+  left: 400px;
+}
+
+.right-tower {
+  right: 400px;
+}
+
+.alert-active {
+  background-color: red;
+  animation: alert-blink 1s infinite;
+  border-radius: 50%;  
+  width: 50px;         
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@keyframes alert-blink {
+  50% { opacity: 0.5; }
+}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h5>Belt Thickness vs Days</h5>
+        </div>
+        <div class="card-block">
+            <div>
+                <svg height="100" width="100" class="signal-tower left-tower">
+                  <circle cx="50" cy="50" r="10"/>
+                </svg>
+                <svg height="100" width="100" class="signal-tower right-tower">
+                  <circle cx="50" cy="50" r="10"/>
+                </svg>
+          </div>
+          
+        </div>
+    </div>
+
+    <script>
+        const leftTower = document.querySelector('.left-tower');
+        const rightTower = document.querySelector('.right-tower');
+        
+        function checkFaults() {
+          const faultLocation = 1; // Replace with your actual fault location logic
+        
+          if (faultLocation === 1) {
+            leftTower.classList.add('alert-active');
+            rightTower.classList.remove('alert-active');
+          } else if (faultLocation === 2) {
+            leftTower.classList.remove('alert-active');
+            rightTower.classList.add('alert-active');
+          } else {
+            leftTower.classList.remove('alert-active');
+            rightTower.classList.remove('alert-active');
+          }
+        }
+        
+        checkFaults();
+        
+        setInterval(checkFaults, 5000);
+      </script>
+</body>
+
+</html>
+
+
+{% endblock content %}  

@@ -1,0 +1,1001 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load i18n static admin_datta %}
+
+{% block breadcrumbs %}{% endblock breadcrumbs %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include ECharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Temperature</h5>
+    </div>
+    <div class="card-block">
+        <div id="chart-DynamicStacked" style="width: 100%; height: 350px;"></div>
+    </div>
+</div>
+<!-- Echart tags Js -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+            var domdynamic = document.getElementById("chart-DynamicStacked");
+            var myChartdynamic = echarts.init(domdynamic);
+            var app = {};
+            var optiondyn = null;
+            optiondyn = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#283b56'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['Km 1', 'Km 2', 'Km 3', 'Km 4', 'Km 5', 'Km 6', 'Km 7', 'Km 8', 'Km 9', 'Km 10','Km 11','Km 12','Km 13','Km 14']
+                },
+                color: ['#03071e', '#370617', '#6a040f', '#9d0208', '#d00000', '#dc2f02', '#e85d04', '#f48c06', '#faa307', '#ffba08','#fec89a','#fcd5ce','#ffd7ba','#fec89a'],
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: {
+                            readOnly: false
+                        },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                dataZoom: {
+                    show: false,
+                    start: 0,
+                    end: 100
+                },
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                }, {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(10 - len - 1);
+                        }
+                        return res;
+                    })()
+                }],
+                yAxis: [{
+                    type: 'value',
+                    scale: true,
+                    name: 'Start',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }, {
+                    type: 'value',
+                    scale: false,
+                    name: 'End',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }],
+                series: (function() {
+                    var seriesArr = [];
+                    for (var i = 1; i <= 14; i++) {
+                        seriesArr.push({
+                            name: 'Km ' + i,
+                            type: 'bar',
+                            stack: 'stacked',
+                            itemStyle: {
+                                borderRadius: [15, 15, 0, 0],
+                            },
+                            xAxisIndex: 1,
+                            yAxisIndex: 1,
+                            data: (function() {
+                                var res = [];
+                                var len = 10;
+                                while (len--) {
+                                    res.push(Math.round(Math.random() * 40) + 30); // Random values between 300 and 700
+                                }
+                                return res;
+                            })()
+                        });
+                    }
+                    return seriesArr;
+                })()
+            };
+            app.count = 10;
+            setInterval(function() {
+                axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+
+                for (var i = 0; i < optiondyn.series.length; i++) {
+                    var data = optiondyn.series[i].data;
+                    data.shift();
+                    data.push(Math.round(Math.random() * 40) + 30); // Random values between 300 and 700
+                }
+
+                optiondyn.xAxis[0].data.shift();
+                optiondyn.xAxis[0].data.push(axisData);
+                optiondyn.xAxis[1].data.shift();
+                optiondyn.xAxis[1].data.push(app.count++);
+
+                myChartdynamic.setOption(optiondyn);
+            }, 2100);
+
+            if (optiondyn && typeof optiondyn === "object") {
+                myChartdynamic.setOption(optiondyn, true);
+            }
+        }, 700);
+    });
+</script>
+</body>
+</html>
+
+<html>
+<head>
+    <!-- Include ECharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Pressure</h5>
+    </div>
+    <div class="card-block">
+        <div id="chart-DynamicStacked1" style="width: 100%; height: 350px;"></div>
+    </div>
+</div>
+<!-- Echart tags Js -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+            var domdynamic = document.getElementById("chart-DynamicStacked1");
+            var myChartdynamic = echarts.init(domdynamic);
+            var app = {};
+            var optiondyn = null;
+            optiondyn = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#283b56'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['Km 1', 'Km 2', 'Km 3', 'Km 4', 'Km 5', 'Km 6', 'Km 7', 'Km 8', 'Km 9', 'Km 10','Km 11','Km 12','Km 13','Km 14']
+                },
+                color: ['#001233','#012a4a', '#013a63', '#01497c', '#014f86', '#1982c4','#2a6f97', '#2c7da0', '#468faf', '#61a5c2', '#89c2d9', '#a9d6e5','#e2eafc','#edf2fb'],
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: {
+                            readOnly: false
+                        },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                dataZoom: {
+                    show: false,
+                    start: 0,
+                    end: 100
+                },
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                }, {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(10 - len - 1);
+                        }
+                        return res;
+                    })()
+                }],
+                yAxis: [{
+                    type: 'value',
+                    scale: true,
+                    name: 'Start',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }, {
+                    type: 'value',
+                    scale: false,
+                    name: 'End',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }],
+                series: (function() {
+                    var seriesArr = [];
+                    for (var i = 1; i <= 14; i++) {
+                        seriesArr.push({
+                            name: 'Km ' + i,
+                            type: 'bar',
+                            stack: 'stacked',
+                            itemStyle: {
+                                borderRadius: [15, 15, 0, 0],
+                            },
+                            xAxisIndex: 1,
+                            yAxisIndex: 1,
+                            data: (function() {
+                                var res = [];
+                                var len = 10;
+                                while (len--) {
+                                    res.push(Math.round(Math.random() * 40) + 30); // Random values between 300 and 700
+                                }
+                                return res;
+                            })()
+                        });
+                    }
+                    return seriesArr;
+                })()
+            };
+            app.count = 10;
+            setInterval(function() {
+                axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+
+                for (var i = 0; i < optiondyn.series.length; i++) {
+                    var data = optiondyn.series[i].data;
+                    data.shift();
+                    data.push(Math.round(Math.random() * 40) + 30); // Random values between 300 and 700
+                }
+
+                optiondyn.xAxis[0].data.shift();
+                optiondyn.xAxis[0].data.push(axisData);
+                optiondyn.xAxis[1].data.shift();
+                optiondyn.xAxis[1].data.push(app.count++);
+
+                myChartdynamic.setOption(optiondyn);
+            }, 2100);
+
+            if (optiondyn && typeof optiondyn === "object") {
+                myChartdynamic.setOption(optiondyn, true);
+            }
+        }, 700);
+    });
+</script>
+</body>
+</html>
+
+<html>
+  <head>
+<script src="https://code.highcharts.com/highcharts.js">
+    </script>
+</head>
+  <body>
+    <div class="card">
+        <div class="card-header">
+            <h5>Drum Temperature</h5>
+        </div>
+<figure class="highcharts-figure">
+    <div id="parent-container">
+        <div id="play-controls">
+            <!-- Remove the play button HTML -->
+            <input id="play-range" type="range" value="1960" min="1960" max="2018" />
+        </div>
+        <div id="container"></div>
+    </div>
+</figure>
+</div>
+<style>
+    @import "https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css";
+
+    .highcharts-figure {
+        margin: 0;
+    }
+
+    #play-controls {
+        max-width: 1000px;
+        margin: 1em auto;
+      display: none;
+    }
+
+    #container {
+        height: 450px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    #play-range {
+        transform: translateY(2.5px);
+        width: calc(100% - 90px);
+        background: #f8f8f8;
+    }
+</style>
+<script>
+    const startYear = 1960,
+        endYear = 2018,
+        input = document.getElementById('play-range'),
+        nbr = 20;
+
+    let dataset, chart, animationInterval;
+
+    (async () => {
+        dataset = await fetch('https://demo-live-data.highcharts.com/population.json').then(response => response.json());
+
+        chart = Highcharts.chart('container', {
+            chart: {
+                animation: {
+                    duration: 500
+                },
+                marginRight: 50
+            },
+            title: {
+                text: '',
+                align: 'left'
+            },
+            subtitle: {
+                useHTML: true,
+                text: getSubtitle(),
+                floating: true,
+                align: 'right',
+                verticalAlign: 'middle',
+                y: -20,
+                x: -100
+            },
+            legend: {
+                enabled: false
+            },
+            xAxis: {
+                type: 'category'
+            },
+            yAxis: {
+                opposite: true,
+                tickPixelInterval: 150,
+                title: {
+                    text: null
+                }
+            },
+            plotOptions: {
+                series: {
+                    animation: false,
+                    groupPadding: 0,
+                    pointPadding: 0.1,
+                    borderWidth: 0,
+                    colorByPoint: true,
+                    dataSorting: {
+                        enabled: true,
+                        matchByName: true
+                    },
+                    type: 'bar',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    name: startYear,
+                    data: getData(startYear)[1]
+                }
+            ],
+            responsive: {
+                rules: [
+                    {
+                        condition: {
+                            maxWidth: 550
+                        },
+                        chartOptions: {
+                            xAxis: {
+                                visible: false
+                            },
+                            subtitle: {
+                                x: 0
+                            },
+                            plotOptions: {
+                                series: {
+                                    dataLabels: [
+                                        {
+                                            enabled: true,
+                                            y: 8
+                                        },
+                                        {
+                                            enabled: true,
+                                            format: '{point.name}',
+                                            y: -8,
+                                            style: {
+                                                fontWeight: 'normal',
+                                                opacity: 0.7
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        });
+
+        // Start the animation automatically
+        animationInterval = setInterval(() => {
+            update(1);
+        }, 500);
+    })();
+
+    function getData(year) {
+        const output = Object.entries(dataset)
+            .map(country => {
+                const [countryName, countryData] = country;
+                return [countryName, Number(countryData[year])];
+            })
+            .sort((a, b) => b[1] - a[1]);
+        return [output[0], output.slice(1, nbr)];
+    }
+
+    function getSubtitle() {
+        const population = (getData(input.value)[0][1] / 1000000000).toFixed(2);
+        return `<span style="font-size: 80px">${input.value}</span>
+        <br>
+        <span style="font-size: 22px">
+            Total: <b>: ${population}</b> billion
+        </span>`;
+    }
+
+    /*
+     * Update the chart. This happens either on updating (moving) the range input,
+     * or from a timer when the timeline is playing.
+     */
+    function update(increment) {
+        if (increment) {
+            input.value = parseInt(input.value, 10) + increment;
+        }
+        if (input.value >= endYear) {
+            // Auto-pause when reaching the end
+            clearInterval(animationInterval);
+        }
+
+        chart.update(
+            {
+                subtitle: {
+                    text: getSubtitle()
+                }
+            },
+            false,
+            false,
+            false
+        );
+
+        chart.series[0].update({
+            name: input.value,
+            data: getData(input.value)[1]
+        });
+    }
+
+    /*
+     * Pause the timeline, either when the range is ended.
+     * Pausing stops the timer.
+     */
+    function pause() {
+        clearInterval(animationInterval);
+    }
+</script>
+    </body>
+</html>
+
+
+<html>
+<head>
+    <!-- Include ECharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://echarts.baidu.com/echarts2/doc/example/timelineOption.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-echarts/js/echarts-en.min.js"></script>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Acoustics</h5>
+    </div>
+    <div class="card-block  text-center">
+        <div id="chart-DynamicLineBar" style="width: 100%; height: 350px;"></div>
+    </div>
+</div>
+<!-- Echart tags Js -->
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            async function displaySensorData() {
+                try {
+                    // Fetch the JSON file
+                    const response = await fetch('{% static 'assets/decoded.json' %}');
+                    // Parse the JSON data
+                    const sensorData = await response.json();
+                    return sensorData;
+                } catch (error) {
+                    console.error('Error fetching or parsing JSON:', error);
+                    return [];
+                }
+            }
+            async function updateDynamicLineBarChart() {
+                const sensorData = await displaySensorData();
+
+            var domdynamic = document.getElementById("chart-DynamicLineBar");
+            var myChartdynamic = echarts.init(domdynamic);
+            var app = {};
+            var optiondyn = null;
+            optiondyn = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#283b56'
+                        }
+                    }
+                },
+                legend: {
+                    data: ['Strain', 'Temperature']
+                },
+                color: ['#A389D4', '#1de9b6'],
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: {
+                            readOnly: false
+                        },
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                dataZoom: {
+                    show: false,
+                    start: 0,
+                    end: 100
+                },
+                xAxis: [{
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                }, {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function() {
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(10 - len - 1);
+                        }
+                        return res;
+                    })()
+                }],
+                yAxis: [{
+                    type: 'value',
+                    scale: true,
+                    name: 'Strain',
+                    max: 100,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }, {
+                    type: 'value',
+                    scale: true,
+                    name: 'Temperature',
+                    max: 200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }],
+                series: [{
+                    name: 'Temperature',
+                    type: 'bar',
+                    itemStyle: {
+                        barBorderRadius: [15, 15, 0, 0],
+                    },
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data: sensorData.map(obj => obj.temperature)
+                }, {
+                    name: 'Strain',
+                    type: 'line',
+                    smooth: true,
+                    data: (function () {
+                            var res = [];
+                            var len = 10;
+                            while (len--) {
+                                res.push(0); // Initial values for the line chart
+                            }
+                            return res;
+                        })()
+                }]
+            };
+            app.count = 10;
+            setInterval(function() {
+                axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+
+                var data0 = optiondyn.series[0].data;
+                var data1 = optiondyn.series[1].data;
+
+                // Shift data to the left
+                data0.shift();
+                data1.shift();
+
+                // Add new data to the right
+                data0.push(sensorData[app.count].strain);
+                data1.push(sensorData[app.count].temperature);
+
+                optiondyn.xAxis[0].data.shift();
+                optiondyn.xAxis[0].data.push(axisData);
+                optiondyn.xAxis[1].data.shift();
+                optiondyn.xAxis[1].data.push(app.count++);
+
+                myChartdynamic.setOption(optiondyn);
+            }, 2100);
+
+            if (optiondyn && typeof optiondyn === "object") {
+                myChartdynamic.setOption(optiondyn, true);
+            }
+        }
+        updateDynamicLineBarChart();
+    });
+</script>
+</body>
+</html>
+
+<html>
+<head>
+    <!-- Include ECharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="http://echarts.baidu.com/echarts2/doc/example/timelineOption.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-echarts/js/echarts-en.min.js"></script>
+<!-- Morris chart css -->
+<link href="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-morris/css/morris.css" rel="stylesheet">
+<!-- Morris chart Js -->
+<script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-morris/js/raphael.min.js"></script>
+<script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-morris/js/morris.min.js"></script>
+</head>
+<body>
+<div class="card">
+    <div class="card-header">
+        <h5>Belt-Tension</h5>
+    </div>
+    <div class="card-block">
+        <div id="morris-line-realtime-chart" class="ChartShadow" style="height:300px"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        setTimeout(function() {
+
+            var nReloads = 0;
+
+            function data(offset) {
+                var ret = [];
+                for (var x = 0; x <= 360; x += 10) {
+                    var v = (offset + x) % 360;
+                    ret.push({
+                        x: x + nReloads * 10,
+                        y: Math.cos(Math.PI * v / 90).toFixed(4),
+                        z: Math.cos(Math.PI * v / 180).toFixed(4),
+                        a: Math.sin(Math.PI * v / 90).toFixed(4)
+                    });
+                }
+                return ret;
+            }
+            var graph_real = Morris.Line({
+                element: 'morris-line-realtime-chart',
+                data: data(0),
+                resize: true,
+                xkey: 'x',
+                ykeys: ['y', 'z', 'a'],
+                labels: ['line 1', 'line 2', 'line 3'],
+                parseTime: false,
+                ymin: -1.0,
+                ymax: 1.0,
+                lineColors: ['#A389D4', '#1de9b6', '#04a9f5'],
+                pointSize: 4,
+                responsive: true,
+                pointFillColors: ['#fff', '#fff', '#fff'],
+                pointStrokeColors: ['#A389D4', '#1de9b6', '#04a9f5'],
+                lineWidth: 2,
+                hideHover: true
+            });
+
+            function update() {
+                nReloads++;
+                graph_real.setData(data(5 * nReloads));
+            }
+            setInterval(update, 100);
+
+        }, 700);
+    });
+</script>
+</body>
+</html>
+<html>
+    <head>
+        <!-- Include jQuery library -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Include ECharts library -->
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+        <!-- Include ECharts extension for gauge charts -->
+        <script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-echarts/js/echarts-en.min.js"></script>
+    </head>
+<body>
+<div class="row">
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Motor Temperature</h5>
+                    </div>
+                    <div class="card-block  text-center">
+                        <div id="chart-Gauge" style="width: 90%; height: 350px;"></div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            var dom = document.getElementById("chart-Gauge");
+                            var myChart = echarts.init(dom);
+                            var app = {};
+                            option = null;
+                            option = {
+                                tooltip: {
+                                    formatter: "{a} <br/>{b} : {c}%"
+                                },
+                                toolbox: {
+                                    feature: {
+                                        restore: {},
+                                        saveAsImage: {}
+                                    }
+                                },
+                                series: [{
+                                    name: 'gauge Chart',
+                                    type: 'gauge',
+                                    axisLine: {
+                                        show: true,
+                                        lineStyle: {
+                                            color: [
+                                            [0.2, '#02c39a'],
+                                                [0.8, '#f9c74f'],
+                                                [1, '#d90429']
+                                            ],
+                                            width: 15
+                                        }
+                                    },
+                                    detail: {
+                                        formatter: '{value}%'
+                                    },
+                                    data: [{
+                                        value: 50,
+                                        name: ''
+                                    }]
+                                }]
+                            };
+                            setInterval(function() {
+                                option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+                                myChart.setOption(option, true);
+                            }, 2000);;
+                            if (option && typeof option === "object") {
+                                myChart.setOption(option, true);
+                            }
+                        }, 700);
+                    });
+                </script>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>RPM</h5>
+                    </div>
+                    <div class="card-block  text-center">
+                        <div id="chart-Gauge2" style="width: 100%; height: 350px;"></div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        setTimeout(function() {
+                            var dom = document.getElementById("chart-Gauge2");
+                            var myChart = echarts.init(dom);
+                            var app = {};
+                            option = null;
+                            option = {
+                                tooltip: {
+                                    formatter: "{a} <br/>{b} : {c}%"
+                                },
+                                toolbox: {
+                                    feature: {
+                                        restore: {},
+                                        saveAsImage: {}
+                                    }
+                                },
+                                series: [{
+                                    name: 'gauge Chart',
+                                    type: 'gauge',
+                                    axisLine: {
+                                        show: true,
+                                        lineStyle: {
+                                            color: [
+                                                [0.2, '#02c39a'],
+                                                [0.8, '#f9c74f'],
+                                                [1, '#d90429']
+                                            ],
+                                            width: 15
+                                        }
+                                    },
+                                    detail: {
+                                        formatter: '{value}%'
+                                    },
+                                    data: [{
+                                        value: 50,
+                                        name: ''
+                                    }]
+                                }]
+                            };
+                            setInterval(function() {
+                                option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+                                myChart.setOption(option, true);
+                            }, 2000);;
+                            if (option && typeof option === "object") {
+                                myChart.setOption(option, true);
+                            }
+                        }, 700);
+                    });
+                </script>
+            </div>
+          
+        </div>
+    </div>
+   </div>
+   </body>
+   </html>
+
+
+    <html>
+        <head>
+            <!-- Include ECharts library -->
+            <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+            <!-- Include ECharts extension for gauge charts -->
+            <script src="https://appsrv1-147a1.kxcdn.com/dattaable-pro/plugins/chart-echarts/js/echarts-en.min.js"></script>
+        </head>
+        <body>
+            <div class="card">
+                <div class="card-header">
+                    <h5>Temperature</h5>
+                </div>
+                <div class="card-block text-center">
+                    <div id="chart-Gauge3" style="width: 100%; height: 350px;"></div>
+                </div>
+            </div>
+            
+            <script type="text/javascript">
+                // Define the async function to fetch and display temperatures
+                async function displayTemperatures() {
+                    try {
+                        // Fetch the JSON file
+                        const response = await fetch('{% static 'assets/decoded.json' %}');
+                        
+                        // Parse the JSON data
+                        const data = await response.json();
+                        
+                        // Extract and return temperature values
+                        return data.map(obj => obj.temperature);
+                    } catch (error) {
+                        console.error('Error fetching or parsing JSON:', error);
+                        return [];
+                    }
+                }
+    
+                // Function to update the gauge chart
+                async function updateGaugeChart() {
+                    const tempValues = await displayTemperatures();
+    
+                    // Initialize the gauge chart
+                    const dom = document.getElementById("chart-Gauge3");
+                    const myChart = echarts.init(dom);
+                    const option = {
+                        tooltip: {
+                            formatter: "{a} <br/>{b} : {c}%"
+                        },
+                        toolbox: {
+                            feature: {
+                                restore: {},
+                                saveAsImage: {}
+                            }
+                        },
+                        series: [{
+                            name: 'Temperature',
+                            type: 'gauge',
+                            axisLine: {
+                                show: true,
+                                lineStyle: {
+                                    color: [
+                                        [0.2, '#02c39a'],
+                                        [0.8, '#f9c74f'],
+                                        [1, '#d90429']
+                                    ],
+                                    width: 15
+                                }
+                            },
+                            detail: {
+                                formatter: '{value}%'
+                            },
+                            data: [{
+                                value: tempValues.length > 0 ? tempValues[0] : 0, // Initial value
+                                name: ''
+                            }]
+                        }]
+                    };
+    
+                    // Update gauge chart with each temperature value
+                    let index = 1;
+                    function updateGauge() {
+                        if (index < tempValues.length) {
+                            option.series[0].data[0].value = tempValues[index];
+                            myChart.setOption(option, true);
+                            index++;
+                            setTimeout(updateGauge, 2000);
+                        }
+                    }
+    
+                    // Start updating the gauge chart
+                    updateGauge();
+                }
+    
+                // Call the function to update the gauge chart
+                updateGaugeChart();
+            </script>
+        </body>
+    </html>
+    
+    
+   
+{% endblock content %}  

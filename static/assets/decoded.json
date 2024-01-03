@@ -1,0 +1,618 @@
+[
+    {
+      "deviceId": "device1",
+      "temperature": 54,
+      "strain": 5,
+      "vibration": 65,
+      "accelerometer": {
+        "x": 0.9599073496460483,
+        "y": 0.18904052497308726,
+        "z": 0.06243410430030623
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 82,
+      "strain": 61,
+      "vibration": 45,
+      "accelerometer": {
+        "x": 0.27275400621479096,
+        "y": 0.6381851833491518,
+        "z": 0.20390191869991922
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 65,
+      "strain": 97,
+      "vibration": 49,
+      "accelerometer": {
+        "x": 0.13086780027061132,
+        "y": 0.5681153226495326,
+        "z": 0.9924651547300002
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 124,
+      "strain": 56,
+      "vibration": 24,
+      "accelerometer": {
+        "x": 0.4891783769657735,
+        "y": 0.5991671400140818,
+        "z": 0.31074929205269985
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 109,
+      "strain": 76,
+      "vibration": 33,
+      "accelerometer": {
+        "x": 0.895446369841437,
+        "y": 0.8544358251869846,
+        "z": 0.17678996509722897
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 90,
+      "strain": 6,
+      "vibration": 56,
+      "accelerometer": {
+        "x": 0.37447664531621927,
+        "y": 0.3008689928338253,
+        "z": 0.6112913981132635
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 136,
+      "strain": 0,
+      "vibration": 53,
+      "accelerometer": {
+        "x": 0.9770189416487789,
+        "y": 0.2722508242690241,
+        "z": 0.3469018909832937
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 60,
+      "strain": 62,
+      "vibration": 24,
+      "accelerometer": {
+        "x": 0.25512434693757646,
+        "y": 0.5626647321333479,
+        "z": 0.6931045752452242
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 54,
+      "strain": 87,
+      "vibration": 13,
+      "accelerometer": {
+        "x": 0.6760211054589698,
+        "y": 0.714869713277961,
+        "z": 0.03769526958358254
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 69,
+      "strain": 55,
+      "vibration": 45,
+      "accelerometer": {
+        "x": 0.34174617675214364,
+        "y": 0.36426434263785573,
+        "z": 0.4215521642107294
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 123,
+      "strain": 43,
+      "vibration": 76,
+      "accelerometer": {
+        "x": 0.2693936639788531,
+        "y": 0.8694140835988401,
+        "z": 0.5759828773215333
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 113,
+      "strain": 77,
+      "vibration": 68,
+      "accelerometer": {
+        "x": 0.8739520543599278,
+        "y": 0.26985417551819896,
+        "z": 0.5632355993442403
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 95,
+      "strain": 77,
+      "vibration": 30,
+      "accelerometer": {
+        "x": 0.8910329271531817,
+        "y": 0.3844598542826529,
+        "z": 0.9719650898929523
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 57,
+      "strain": 34,
+      "vibration": 21,
+      "accelerometer": {
+        "x": 0.6393208180737313,
+        "y": 0.8459902577316343,
+        "z": 0.977941656009267
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 55,
+      "strain": 72,
+      "vibration": 35,
+      "accelerometer": {
+        "x": 0.5273071641695254,
+        "y": 0.18385947783657325,
+        "z": 0.748431434272058
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 66,
+      "strain": 51,
+      "vibration": 64,
+      "accelerometer": {
+        "x": 0.11128041339632143,
+        "y": 0.24701023066742822,
+        "z": 0.8407302507389012
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 108,
+      "strain": 83,
+      "vibration": 76,
+      "accelerometer": {
+        "x": 0.6598295968304526,
+        "y": 0.6162248619907651,
+        "z": 0.7858643339881042
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 51,
+      "strain": 17,
+      "vibration": 61,
+      "accelerometer": {
+        "x": 0.559205210096764,
+        "y": 0.21638852833602043,
+        "z": 0.9435806283464565
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 124,
+      "strain": 29,
+      "vibration": 17,
+      "accelerometer": {
+        "x": 0.47917163999712636,
+        "y": 0.2668093588514297,
+        "z": 0.023745682567239593
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 71,
+      "strain": 9,
+      "vibration": 58,
+      "accelerometer": {
+        "x": 0.7852925154312014,
+        "y": 0.21504450832262845,
+        "z": 0.14209526644185896
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 72,
+      "strain": 11,
+      "vibration": 59,
+      "accelerometer": {
+        "x": 0.9292463208219253,
+        "y": 0.7137973861367429,
+        "z": 0.7505867275179302
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 142,
+      "strain": 34,
+      "vibration": 52,
+      "accelerometer": {
+        "x": 0.45329002358638215,
+        "y": 0.30736520761035624,
+        "z": 0.5491349955783854
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 71,
+      "strain": 41,
+      "vibration": 72,
+      "accelerometer": {
+        "x": 0.4189592946409058,
+        "y": 0.6238939979224903,
+        "z": 0.6704861999817594
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 87,
+      "strain": 49,
+      "vibration": 51,
+      "accelerometer": {
+        "x": 0.4037519644032009,
+        "y": 0.7836321689112262,
+        "z": 0.884275237510109
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 108,
+      "strain": 68,
+      "vibration": 25,
+      "accelerometer": {
+        "x": 0.616869698100197,
+        "y": 0.8945518778146021,
+        "z": 0.1563223377598088
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 75,
+      "strain": 79,
+      "vibration": 62,
+      "accelerometer": {
+        "x": 0.6156927000804304,
+        "y": 0.43117931225857664,
+        "z": 0.5046325412134791
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 69,
+      "strain": 8,
+      "vibration": 46,
+      "accelerometer": {
+        "x": 0.8560532661415885,
+        "y": 0.6365849914199603,
+        "z": 0.8680363646093925
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 91,
+      "strain": 29,
+      "vibration": 99,
+      "accelerometer": {
+        "x": 0.6188427087007289,
+        "y": 0.2649945166264635,
+        "z": 0.8517021377811684
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 79,
+      "strain": 79,
+      "vibration": 47,
+      "accelerometer": {
+        "x": 0.9150441158167292,
+        "y": 0.41399085308145306,
+        "z": 0.7199005627631678
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 113,
+      "strain": 82,
+      "vibration": 33,
+      "accelerometer": {
+        "x": 0.7086656827985615,
+        "y": 0.3487925908289815,
+        "z": 0.032814357910684475
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 99,
+      "strain": 30,
+      "vibration": 45,
+      "accelerometer": {
+        "x": 0.3679565165042675,
+        "y": 0.19809008864596955,
+        "z": 0.5089900034987321
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 142,
+      "strain": 59,
+      "vibration": 98,
+      "accelerometer": {
+        "x": 0.21966125686637183,
+        "y": 0.22603588096147212,
+        "z": 0.5377134985931746
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 70,
+      "strain": 51,
+      "vibration": 85,
+      "accelerometer": {
+        "x": 0.6428939242115682,
+        "y": 0.9844501903208206,
+        "z": 0.49324719723930915
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 139,
+      "strain": 96,
+      "vibration": 42,
+      "accelerometer": {
+        "x": 0.40075595136767067,
+        "y": 0.3174178136128084,
+        "z": 0.09678263687378849
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 118,
+      "strain": 34,
+      "vibration": 39,
+      "accelerometer": {
+        "x": 0.9003797876184713,
+        "y": 0.9845277224595322,
+        "z": 0.6062809920899016
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 67,
+      "strain": 48,
+      "vibration": 74,
+      "accelerometer": {
+        "x": 0.42889231370244746,
+        "y": 0.3579246277724973,
+        "z": 0.33083447084335355
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 91,
+      "strain": 5,
+      "vibration": 10,
+      "accelerometer": {
+        "x": 0.4832290292173759,
+        "y": 0.6899880635039826,
+        "z": 0.6665100933362311
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 136,
+      "strain": 7,
+      "vibration": 57,
+      "accelerometer": {
+        "x": 0.9290803963919545,
+        "y": 0.7062645874481017,
+        "z": 0.8987424568732932
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 136,
+      "strain": 98,
+      "vibration": 84,
+      "accelerometer": {
+        "x": 0.8347129546267507,
+        "y": 0.8166094780045605,
+        "z": 0.38718156953676675
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 111,
+      "strain": 9,
+      "vibration": 98,
+      "accelerometer": {
+        "x": 0.35701764903823735,
+        "y": 0.6784280737295878,
+        "z": 0.8579342695222861
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 62,
+      "strain": 2,
+      "vibration": 61,
+      "accelerometer": {
+        "x": 0.3776469167217831,
+        "y": 0.04298886751895252,
+        "z": 0.7417781500805999
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 130,
+      "strain": 77,
+      "vibration": 16,
+      "accelerometer": {
+        "x": 0.5277244832961469,
+        "y": 0.22865784551420149,
+        "z": 0.9331049327427079
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 90,
+      "strain": 40,
+      "vibration": 27,
+      "accelerometer": {
+        "x": 0.7494784182633638,
+        "y": 0.5329817223981869,
+        "z": 0.23762718599179164
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 102,
+      "strain": 76,
+      "vibration": 63,
+      "accelerometer": {
+        "x": 0.4856418941568778,
+        "y": 0.039038178994803774,
+        "z": 0.996256669050202
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 126,
+      "strain": 34,
+      "vibration": 67,
+      "accelerometer": {
+        "x": 0.35020633896356745,
+        "y": 0.812066467391358,
+        "z": 0.2605519407710768
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 84,
+      "strain": 5,
+      "vibration": 37,
+      "accelerometer": {
+        "x": 0.2343606135036613,
+        "y": 0.3586233767488149,
+        "z": 0.6615132059257073
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 55,
+      "strain": 49,
+      "vibration": 4,
+      "accelerometer": {
+        "x": 0.8299552098987415,
+        "y": 0.12875480629911404,
+        "z": 0.9263773727819218
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 124,
+      "strain": 33,
+      "vibration": 76,
+      "accelerometer": {
+        "x": 0.9073431971051465,
+        "y": 0.4337606404133889,
+        "z": 0.40778230242793556
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 61,
+      "strain": 86,
+      "vibration": 56,
+      "accelerometer": {
+        "x": 0.7507055209720067,
+        "y": 0.8319683721437903,
+        "z": 0.9179800273468625
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 72,
+      "strain": 63,
+      "vibration": 98,
+      "accelerometer": {
+        "x": 0.6177000317804981,
+        "y": 0.6118140544797359,
+        "z": 0.7010294327982839
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 57,
+      "strain": 45,
+      "vibration": 96,
+      "accelerometer": {
+        "x": 0.8967718276645857,
+        "y": 0.18522271941659169,
+        "z": 0.17143941585507216
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 106,
+      "strain": 16,
+      "vibration": 5,
+      "accelerometer": {
+        "x": 0.6101097518625249,
+        "y": 0.6969250257578329,
+        "z": 0.04285441015048624
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 70,
+      "strain": 69,
+      "vibration": 63,
+      "accelerometer": {
+        "x": 0.7075138588936598,
+        "y": 0.744223205719247,
+        "z": 0.7054210536672831
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 73,
+      "strain": 85,
+      "vibration": 90,
+      "accelerometer": {
+        "x": 0.2598659504483761,
+        "y": 0.2346477272150329,
+        "z": 0.9447190393436323
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 119,
+      "strain": 59,
+      "vibration": 23,
+      "accelerometer": {
+        "x": 0.4549371565016625,
+        "y": 0.010317575656956795,
+        "z": 0.7196596184371317
+      }
+    },
+    {
+      "deviceId": "device1",
+      "temperature": 117,
+      "strain": 43,
+      "vibration": 87,
+      "accelerometer": {
+        "x": 0.33577232730378037,
+        "y": 0.7558253126944533,
+        "z": 0.6786355551698411
+      }
+    }
+  ]
