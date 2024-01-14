@@ -11,7 +11,10 @@ Random Forest, a machine learning model, adeptly handles non-linear relationship
 <br />
 
 ## Pages
-![Django Admin Black - Template project for Django provided by AppSeed.](https://github.com/SUNIL-BALRAJ/smooth_sail/blob/main/mask_image/maskimage.jpg)
+![Smooth Sail - Home Page](https://github.com/SUNIL-BALRAJ/smooth_sail/blob/main/app_images/page1.jpg)
+![Smooth Sail - Failure Prediction Page](https://github.com/SUNIL-BALRAJ/smooth_sail/blob/main/app_images/page2.jpg)
+![Smooth Sail - Live data Page](https://github.com/SUNIL-BALRAJ/smooth_sail/blob/main/app_images/page3.jpg)
+![Smooth Sail - Live Prediction Page](https://github.com/SUNIL-BALRAJ/smooth_sail/blob/main/app_images/page4.jpg)
 
 ## Manual Build 
 

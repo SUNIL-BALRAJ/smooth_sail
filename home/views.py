@@ -269,23 +269,6 @@ def telegram(request):
           alert="Alert"
           reason="Low Temperature" 
         if feed_values[3]>10 or feed_values[2]>30 or feed_values[2]<10: 
-          send_sms()
-          import openai
-          # Set your OpenAI GPT-3 API key
-          api_key = "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"
-          # Generate explanation using GPT-3 API
-          prompt="parameter abnormal :"+reason + "/n" + "The main motive is to predict dislodgement of cable belt conveyer by sensing and analysing parameters like temperature, vibration, moisture, accelerometer and give some suggestions or preventive, corrective measures. I have given the parameter which is abnormal based on our sensor data. please give me suggestion or preventive corrective measure for futher steps. for eg if we sense that the vibration is very high the reason would maybe because of high load at that point, decrease in tension, dislocation of pulleys etc. so you can suggest corrective measures."  
-          openai.api_key = api_key
-          response = openai.Completion.create(
-              engine="text-davinci-003",
-              prompt=prompt,
-              max_tokens=250,
-              stop=None,
-              temperature=0.7
-          )
-          
-          measure = response.choices[0].text.strip()
-          print(measure)
           break
         time.sleep(5)
       
@@ -294,7 +277,7 @@ def telegram(request):
             alert_status=alert,
             location="Segment1",
             reason=reason,
-            measure=measure
+            measure="parameter abnormal :"+reason + "/n" + "The main motive is to predict dislodgement of cable belt conveyer by sensing and analysing parameters like temperature, vibration, moisture, accelerometer and give some suggestions or preventive, corrective measures. I have given the parameter which is abnormal based on our sensor data. please give me suggestion or preventive corrective measure for futher steps. for eg if we sense that the vibration is very high the reason would maybe because of high load at that point, decrease in tension, dislocation of pulleys etc. so you can suggest corrective measures."
 
         )
       analysis_result.save()   
