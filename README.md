@@ -24,7 +24,7 @@ Random Forest, a machine learning model, adeptly handles non-linear relationship
 $ git clone https://github.com/SUNIL-BALRAJ/smooth_sail.git
 $ cd django-black-dashboard
 ```
-or you can simple download the project
+or you can simply download the project
 <br />
 
 > 👉 Install modules via `VENV`.
